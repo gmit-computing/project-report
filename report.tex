@@ -1,0 +1,118 @@
+% The main file of the report.
+% Begin the latex document.
+\documentclass[12pt, a4paper, titlepage, hyphens, utf8, title, hidelinks]{report}
+
+% Enables the use of colour.
+\usepackage{xcolor}
+% Syntax high-lighting for code. Requires Python's pygments.
+\usepackage{minted}
+% Enables the use of umlauts and other accents.
+\usepackage[utf8]{inputenc}
+% Diagrams.
+\usepackage{tikz}
+% Settings for captions, such as sideways captions.
+\usepackage{caption}
+% Symbols for units, like degrees and ohms.
+\usepackage{gensymb}
+% Latin modern fonts - better looking than the defaults.
+\usepackage{lmodern}
+% Allows for columns spanning multiple rows in tables.
+\usepackage{multirow}
+% Better looking tables, including nicer borders.
+\usepackage{booktabs}
+% More math symbols.
+\usepackage{amssymb}
+% More math layouts, equation arrays, etc.
+\usepackage{amsmath}
+% More math fonts, like mathbb.
+\usepackage{amsfonts}
+% More theorem environments.
+\usepackage{amsthm}
+% More column formats for tables.
+\usepackage{array}
+% Adjust the sizes of box environments.
+\usepackage{adjustbox}
+% Better looking single quotes in verbatim and minted environments.
+\usepackage{upquote}
+% Better blank space decisions.
+\usepackage{xspace}
+% Better looking tikz trees.
+\usepackage{forest}
+% URLs.
+\usepackage{hyperref}
+% For plotting.
+\usepackage{pgfplots}
+% Web-related icons.
+\usepackage{fontawesome}
+% For including graphics.
+\usepackage{graphicx}
+% For the euro symbol.
+\usepackage{eurosym}
+% For titling appendices.
+\usepackage{appendix}
+% Sideways tables.
+\usepackage{rotating}
+
+% Various tikz libraries.
+% For drawing mind maps.
+\usetikzlibrary{mindmap}
+% For adding shadows.
+\usetikzlibrary{shadows}
+% Extra arrows tips.
+\usetikzlibrary{arrows.meta}
+% Old arrows.
+\usetikzlibrary{arrows}
+% Automata.
+\usetikzlibrary{automata}
+% For more positioning options.
+\usetikzlibrary{positioning}
+% Creating chains of nodes on a line.
+\usetikzlibrary{chains}
+% Fitting node to contain set of coordinates.
+\usetikzlibrary{fit}
+% Extra shapes for drawing.
+\usetikzlibrary{shapes}
+% For markings on paths.
+\usetikzlibrary{decorations.markings}
+% For advanced calculations.
+\usetikzlibrary{calc}
+
+% GMIT colours.
+\definecolor{gmitblue}{RGB}{20,134,225}
+\definecolor{gmitred}{RGB}{220,20,60}
+\definecolor{gmitgrey}{RGB}{67,67,67}
+
+% Set the minted colour scheme.
+\usemintedstyle{manni}
+% Set some global minted styles.
+\setminted{frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize}
+
+% Set the default location of images.
+\graphicspath{{img/}}
+% Set the depth of the table of contents.
+\setcounter{tocdepth}{2}
+
+% Begin the document.
+\begin{document}
+
+  % Include the preamble sections.
+  \input{sections/title.tex}
+  \input{sections/executive.tex}
+  \input{sections/authors.tex}
+  \input{sections/gmit.tex}
+  % Create the table of contents.
+  \tableofcontents
+  \newpage
+  % Include the main sections.
+  \input{sections/introduction.tex}
+  \input{sections/review.tex}
+  \input{sections/platform.tex}
+  \input{sections/deployment.tex}
+  \input{sections/configuration.tex}
+  \input{sections/conclusion.tex}
+  \newpage
+  % Include the bibliography.
+  \bibliographystyle{plain}
+  \bibliography{bibliography}
+
+\end{document}
